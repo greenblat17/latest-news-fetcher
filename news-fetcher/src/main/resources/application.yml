@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: news-fetcher
+  cache:
+    type: redis
+    cache-names: redis-cache
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      port: 6379
+
+news:
+  api:
+    url: https://newsapi.org/v2/top-headlines
+    key: ${API_KEY}

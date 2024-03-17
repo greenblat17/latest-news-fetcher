@@ -8,12 +8,29 @@
   <packaging>pom</packaging>
 
   <name>latest-news-fetcher</name>
+  <modules>
+    <module>news-fetcher</module>
+  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+    <spring.boot.maven.plugin.version>3.2.0</spring.boot.maven.plugin.version>
+    <spring.boot.dependencies.version>3.2.0</spring.boot.dependencies.version>
   </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring.boot.dependencies.version}</version>
+        <scope>import</scope>
+        <type>pom</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <dependencies>
     <dependency>
